@@ -1,0 +1,3 @@
+---
+- name: Install Brave browser
+  apt: name=brave-browser

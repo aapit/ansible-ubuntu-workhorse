@@ -10,4 +10,5 @@
     - { role: dev-tools }
     - { role: auth }
     - { role: media }
+    - { role: browser }
     - { role: virtualbox }
