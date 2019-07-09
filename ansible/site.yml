@@ -1,0 +1,11 @@
+---
+- name: Provision main machine
+  hosts: localhost
+  remote_user: david
+  become: yes
+
+  roles:
+    - { role: keyboard-basics }
+    - { role: dev-tools }
+    - { role: spotify }
+    - { role: virtualbox }

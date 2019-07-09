@@ -1,0 +1,6 @@
+---
+- name: Install Git client
+  apt: name=git
+
+- name: Install NeoVim
+  apt: name=neovim
