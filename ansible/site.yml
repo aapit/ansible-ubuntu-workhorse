@@ -9,5 +9,5 @@
     - { role: power-saving }
     - { role: dev-tools }
     - { role: auth }
-    - { role: spotify }
+    - { role: media }
     - { role: virtualbox }

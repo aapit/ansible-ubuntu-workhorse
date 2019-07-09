@@ -1,3 +1,0 @@
----
-- name: Install Spotify
-  command: snap install spotify

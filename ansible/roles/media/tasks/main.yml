@@ -1,0 +1,9 @@
+---
+- name: Install Spotify
+  command: snap install spotify
+
+- name: Install VLC player
+  command: snap install vlc
+
+- name: Install VLC codecs
+  command: snap install --beta dav1d
