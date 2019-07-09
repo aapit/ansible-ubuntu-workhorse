@@ -8,5 +8,6 @@
     - { role: keyboard-basics }
     - { role: power-saving }
     - { role: dev-tools }
+    - { role: auth }
     - { role: spotify }
     - { role: virtualbox }

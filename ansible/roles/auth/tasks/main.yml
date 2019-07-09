@@ -1,0 +1,3 @@
+---
+- name: Install Yubikey Authenticator
+  apt: name=yubioath-desktop
