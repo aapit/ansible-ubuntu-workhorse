@@ -6,6 +6,7 @@
 
   roles:
     - { role: keyboard-basics }
+    - { role: power-saving }
     - { role: dev-tools }
     - { role: spotify }
     - { role: virtualbox }
