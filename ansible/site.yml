@@ -5,10 +5,10 @@
   become: yes
 
   roles:
-    - { role: keyboard-basics }
+    - { role: keyboard-basics, tags: keyboard }
     - { role: power-saving }
-    - { role: dev-tools }
-    - { role: auth }
-    - { role: media }
-    - { role: browser }
+    - { role: dev-tools, tags: dev }
+    - { role: auth, tags: auth }
+    - { role: media, tags: media }
+    - { role: browser, tags: browse }
     - { role: virtualbox }
