@@ -1,0 +1,3 @@
+---
+- name: Install Signal Desktop client
+  apt: name=signal-desktop

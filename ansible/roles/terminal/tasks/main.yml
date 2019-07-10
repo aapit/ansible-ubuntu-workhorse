@@ -1,0 +1,24 @@
+---
+- name: Install xterm
+  apt: name=xterm
+
+- name: Install tmux
+  apt: name=tmux
+
+- name: Install xclip, for copy-pasting
+  apt: name=xclip
+
+- name: Install Powerline, for fancier tmux feedback
+  apt: name=powerline
+
+- name: Install Powerline fonts, for fancier tmux feedback
+  apt: name=fonts-powerline
+
+- name: Install Midnight Commander
+  apt: name=mc
+
+- name: Install AutoJump, for easy dir access
+  apt: name=autojump
+
+- name: Install SilverSearcher, for easy file finding
+  apt: name=silversearcher-ag

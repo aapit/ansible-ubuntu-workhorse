@@ -6,9 +6,11 @@
 
   roles:
     - { role: keyboard-basics, tags: keyboard }
+    - { role: terminal, tags: terminal }
     - { role: power-saving }
     - { role: dev-tools, tags: dev }
     - { role: auth, tags: auth }
     - { role: media, tags: media }
     - { role: browser, tags: browse }
+    - { role: messaging, tags: msg }
     - { role: virtualbox }
