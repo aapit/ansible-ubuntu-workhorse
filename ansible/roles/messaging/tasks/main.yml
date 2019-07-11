@@ -1,3 +1,11 @@
 ---
+- name: Approve Signal repository by key
+  apt_key:
+    url: https://updates.signal.org/desktop/apt/keys.asc
+
+- name: Register Signal package repo
+  apt_repository:
+    repo: deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
+
 - name: Install Signal Desktop client
-  apt: name=signal-desktop
+  apt: name=signal-desktop update_cache=yes
