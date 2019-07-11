@@ -1,0 +1,12 @@
+---
+- name: Install curl
+  apt: name=curl
+
+- name: Install nmap
+  apt: name=nmap
+
+- name: Install WhoIs
+  apt: name=whois
+
+- name: Install minicom (for initialization of Cisco devices)
+  apt: name=minicom

@@ -11,6 +11,7 @@
     - { role: dev-tools, tags: dev }
     - { role: auth, tags: auth }
     - { role: media, tags: media }
+    - { role: net, tags: net }
     - { role: browser, tags: browse }
     - { role: messaging, tags: msg }
     - { role: virtualbox }
