@@ -7,3 +7,6 @@
 
 - name: Install ripgrep, for Notational Velocity's fast regex dir searching
   apt: name=ripgrep
+
+- name: Install fzf, fuzzy file finder, needed by Notational Velocity
+  apt: name=fzf
