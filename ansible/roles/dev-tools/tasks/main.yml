@@ -4,3 +4,6 @@
 
 - name: Install NeoVim
   apt: name=neovim
+
+- name: Install ripgrep, for Notational Velocity's fast regex dir searching
+  apt: name=ripgrep
