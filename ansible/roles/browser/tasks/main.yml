@@ -3,9 +3,9 @@
   apt_key:
     url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
 
-- name: Register Brave package repo for Ubuntu Disco (19.04)
+- name: Register Brave package repo for the current distro release
   apt_repository:
-    repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ disco main
+    repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ {{ ansible_distribution_release }} main
 
 - name: Install Brave browser
   apt: name=brave-browser update_cache=yes
