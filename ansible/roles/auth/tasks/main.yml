@@ -1,3 +1,10 @@
 ---
 - name: Install Yubikey Authenticator
   apt: name=yubioath-desktop
+
+- name: Add Howdy (Windows Hello alternative) repo
+  apt_repository:
+    repo: 'ppa:boltgolt/howdy'
+
+- name: Install Howdy (Windows Hello alternative)
+  apt: name=howdy
