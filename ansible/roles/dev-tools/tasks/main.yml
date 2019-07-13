@@ -10,3 +10,13 @@
 
 - name: Install fzf, fuzzy file finder, needed by Notational Velocity
   apt: name=fzf
+
+- name: Install Vim plugins
+  command: vim -c ':PlugInstall | quit | quit'
+  become: no
+
+- name: Install YouCompleteMe (Vim plugin) deps
+  become: no
+  command: python3 install.py
+  args:
+    chdir: ~/.vim/plugged/YouCompleteMe
