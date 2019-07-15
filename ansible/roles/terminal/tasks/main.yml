@@ -5,6 +5,23 @@
 - name: Install tmux
   apt: name=tmux
 
+- name: Ensure tmux plugin dir
+  become: no
+  file:
+    path: ~/.tmux/plugins
+    state: directory
+
+- name: Install tmux plugin manager
+  become: no
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+    force: yes
+
+- name: Run tmux plugin manager install script
+  become: no
+  command: ~/.tmux/plugins/tpm/bin/install_plugins
+
 - name: Install xclip, for copy-pasting
   apt: name=xclip
 
