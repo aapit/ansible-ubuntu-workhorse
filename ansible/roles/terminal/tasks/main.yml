@@ -46,3 +46,6 @@
 
 - name: Install exa, an ls alternative
   apt: name=exa
+
+- name: Install htop, an alternative to top
+  apt: name=htop
