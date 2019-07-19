@@ -15,4 +15,5 @@
     - { role: browser, tags: browse }
     - { role: messaging, tags: msg }
     - { role: file-sync, tags: sync }
+    - { role: productivity, tags: productivity }
     - { role: virtualbox }
