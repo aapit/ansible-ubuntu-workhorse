@@ -27,3 +27,12 @@
     name: "{{ lookup('env','USER') }}"
     append: yes
     groups: wireshark
+
+- name: Add NordVPN client repository and key
+  apt:
+    deb: https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+
+- name: Install NordVPN client
+  apt: 
+    name: nordvpn
+    update_cache: yes
