@@ -1,3 +1,24 @@
 ---
 - name: Install Gnome Tweak Tool (to enable Compose Key)
   apt: name=gnome-tweak-tool state=present
+
+- name: Create Gnome extensions dir [Emoji Selector]
+  file:
+    path: ~/.local/share/gnome-shell/extensions/emoji-selector@maestrochan.fr
+    state: directory
+  become: no
+
+- name: Download and unpack Gnome extension [Emoji Selector]
+  unarchive:
+    src: https://extensions.gnome.org/extension-data/emoji-selectormaestroschan.fr.v15.shell-extension.zip
+    dest: ~/.local/share/gnome-shell/extensions/emoji-selector@maestrochan.fr
+    remote_src: yes
+  become: no
+
+- name: Enable Gnome extension [Emoji Selector]
+  command: gnome-shell-extension-tool -e emoji-selector@maestrochan.fr
+  become: no
+
+- name: Reload Gnome extension [Emoji Selector]
+  command: gnome-shell-extension-tool -r emoji-selector@maestrochan.fr
+  become: no

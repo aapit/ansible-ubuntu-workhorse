@@ -5,6 +5,7 @@
   become: yes
 
   roles:
+    - { role: os-gui, tags: os-gui }
     - { role: keyboard-basics, tags: keyboard }
     - { role: terminal, tags: terminal }
     - { role: power-saving }

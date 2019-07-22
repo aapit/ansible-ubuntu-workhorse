@@ -1,0 +1,45 @@
+---
+# Deze moet er misschien ook nog bij:
+# gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+# Maar de bovenste commando's gelden voor de dash-to-dock extension, die ik nu niet draai.
+# Wel installed (default): apt gnome-shell-extension-ubuntu-dock
+#
+- name: Adjust Gnome dock to autohide
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
+  become: no
+
+- name: Adjust Gnome dock to autohide when colliding with windows
+  command: gsettings set org.gnome.shell.extensions.dash-to-dock intellihide true
+  become: no
+
+- name: Install Extension to Auto-hide Gnome topbar
+  apt: name=gnome-shell-extension-autohidetopbar
+
+- name: Enable Extension to Auto-hide Gnome topbar
+  command: gnome-shell-extension-tool -e hidetopbar@mathieu.bidon.ca
+  ignore_errors: yes
+  become: no
+
+- name: Install Extension to Hide Gnome 'Activities' button
+  apt: name=gnome-shell-extension-hide-activities
+
+- name: Enable Extension to Hide Gnome 'Activities' button
+  command: gnome-shell-extension-tool -e Hide_Activities@shay.shaye1.org
+  ignore_errors: yes
+  become: no
+
+- name: Install Extension to Hide Gnome 'Window is ready' notifications
+  apt: name=gnome-shell-extension-no-annoyance
+
+- name: Enable Extension to Hide Gnome 'Window is ready' notifications
+  command: gnome-shell-extension-tool -e noannoyance@sindex.com
+  ignore_errors: yes
+  become: no
+
+- name: Install Extension to Move Gnome clock to sane location (corner)
+  apt: name=gnome-shell-extension-move-clock
+
+- name: Enable Extension to Move Gnome clock to sane location (corner)
+  command: gnome-shell-extension-tool -e Move_Clock@jonathan.bluemosh.com
+  ignore_errors: yes
+  become: no
