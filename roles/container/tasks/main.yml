@@ -15,3 +15,6 @@
 
 - name: Install kubectl for Kubernetes
   apt: name=kubectl
+
+- name: Install Helm client
+  command: snap install helm --classic
