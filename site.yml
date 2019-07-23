@@ -19,3 +19,4 @@
     - { role: productivity, tags: productivity }
     - { role: virtualbox }
     - { role: container, tags: container }
+    - { role: hosting, tags: hosting }
