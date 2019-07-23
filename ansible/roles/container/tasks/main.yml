@@ -1,0 +1,14 @@
+---
+- name: Install https transport package for apt, recommended for kubectl
+  apt: name=apt-transport-https
+
+- name: Add apt key for kubectl
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+
+- name: Add kubectl repository
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+
+- name: Install kubectl for Kubernetes
+  apt: name=kubectl

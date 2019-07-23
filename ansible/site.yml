@@ -18,3 +18,4 @@
     - { role: file-sync, tags: sync }
     - { role: productivity, tags: productivity }
     - { role: virtualbox }
+    - { role: container, tags: container }
