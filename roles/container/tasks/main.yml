@@ -2,6 +2,23 @@
 - name: Install Docker
   apt: name=docker.io
 
+- name: Create Docker group
+  group:
+    name: docker
+
+- name: Add current user to Docker group
+  user:
+    name: "{{lookup('env', 'USER')}}"
+    append: yes
+    groups: docker
+
+- name: Apply group changes for Docker, pre-relog
+  command: newgrp docker
+  become: no
+
+- debug:
+    msg: Don't forget to relog to let the new user group take effect.
+
 - name: Install https transport package for apt, recommended for kubectl
   apt: name=apt-transport-https
 
