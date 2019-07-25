@@ -7,3 +7,6 @@
 
 - name: Install VLC codecs
   command: snap install --beta dav1d
+
+- name: Install Gimp
+  apt: name=gimp
