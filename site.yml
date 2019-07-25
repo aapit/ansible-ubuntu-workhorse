@@ -8,7 +8,7 @@
     - { role: os-gui, tags: os-gui }
     - { role: keyboard-basics, tags: keyboard }
     - { role: terminal, tags: terminal }
-    - { role: power-saving }
+    - { role: power-saving, tags: power }
     - { role: dev-tools, tags: dev }
     - { role: auth, tags: auth }
     - { role: media, tags: media }
