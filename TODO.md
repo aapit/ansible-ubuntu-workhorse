@@ -1,21 +1,5 @@
 # Todo
 
-## Enable Compose Key (for accents and such)
-This exactly does what I want but is a bit of a hassle:
-https://help.gnome.org/admin/system-admin-guide/stable/keyboard-compose-key.html.en
-This one probably won't do what I need:
-https://ubuntuforums.org/showthread.php?t=2225253
-It seems like a way to enable this on CLI.
-
-Otherwise this seems like a (more recent) manual way:
-http://ubuntuhandbook.org/index.php/2019/02/enable-set-compose-key-ubuntu-18-04/
-
-## htop
-
-_________________________
-
-# Packages
-
 ## apt packages
 This is the list of leftover apt packages that I used to manage through a custom script, instead of through Ansible. Hopefully I will not need them anymore - either because of an updated system and dependencies, or because I can move these dependencies into a containerized context.
 

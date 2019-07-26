@@ -2,6 +2,31 @@
 - name: Install Gnome Tweak Tool (to enable Compose Key)
   apt: name=gnome-tweak-tool state=present
 
+- name: Configure Compose Key
+  lineinfile:
+    path: /etc/default/keyboard
+    regexp: '^XKBOPTIONS='
+    line: XKBOPTIONS=compose:ralt
+
+- name: Reinitialize console setup after configuring Compose Key
+  command: dpkg-reconfigure -f noninteractive console-setup
+
+- name: Configure xmodmap prefs to set Compose Key 1/2
+  lineinfile:
+    path: ~/.Xmodmap
+    regexp: '^keycode 108'
+    line: keycode 108 = Alt_R
+    create: yes
+  become: no
+
+- name: Configure xmodmap prefs to set Compose Key 2/2
+  lineinfile:
+    path: ~/.Xmodmap
+    regexp: '^keysym Alt_R'
+    line: keysym Alt_R = Multi_key
+    create: yes
+  become: no
+
 - name: Create Gnome extensions dir [Emoji Selector]
   file:
     path: ~/.local/share/gnome-shell/extensions/emoji-selector@maestrochan.fr
@@ -17,6 +42,7 @@
 
 - name: Enable Gnome extension [Emoji Selector]
   command: gnome-shell-extension-tool -e emoji-selector@maestrochan.fr
+  ignore_errors: yes
   become: no
 
 - name: Reload Gnome extension [Emoji Selector]
