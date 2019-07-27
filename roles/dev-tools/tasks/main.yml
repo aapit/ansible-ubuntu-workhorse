@@ -20,3 +20,6 @@
   command: python3 install.py
   args:
     chdir: ~/.vim/plugged/YouCompleteMe
+
+- name: Install Travis CI client
+  apt: name=travis
