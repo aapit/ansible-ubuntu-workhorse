@@ -36,3 +36,6 @@
   apt: 
     name: nordvpn
     update_cache: yes
+
+- name: Install nfs-common to mount nfs disks
+  apt: name=nfs-common
