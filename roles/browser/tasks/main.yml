@@ -9,3 +9,9 @@
 
 - name: Install Brave browser
   apt: name=brave-browser update_cache=yes
+
+# ______________________________
+
+- name: Install Chrome
+  apt:
+    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
