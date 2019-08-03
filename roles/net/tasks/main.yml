@@ -39,3 +39,6 @@
 
 - name: Install nfs-common to mount nfs disks
   apt: name=nfs-common
+
+- name: Install net-tools for netstat and such
+  apt: name=net-tools
