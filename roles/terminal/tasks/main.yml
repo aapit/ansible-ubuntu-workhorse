@@ -49,3 +49,12 @@
 
 - name: Install htop, an alternative to top
   apt: name=htop
+
+- name: Enable cursor blinking
+  command: gsettings set org.gnome.desktop.interface cursor-blink true
+
+- name: Set cursor blink speed to less geriatric (namely fast)
+  command: gsettings set org.gnome.desktop.interface cursor-blink-time 400
+
+- name: Practically disable cursor blink timeout, because who would ever want that...
+  command: gsettings set org.gnome.desktop.interface cursor-blink-timeout 999999
