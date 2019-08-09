@@ -58,3 +58,6 @@
 
 - name: Practically disable cursor blink timeout, because who would ever want that...
   command: gsettings set org.gnome.desktop.interface cursor-blink-timeout 999999
+
+- name: Install neofetch for easy OS and system info
+  apt: name=neofetch
