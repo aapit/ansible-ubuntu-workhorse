@@ -5,3 +5,6 @@
 
 - name: Install Restic for backups
   apt: name=restic
+
+- name: Install GitHub cli client
+  command: snap install hub --classic
