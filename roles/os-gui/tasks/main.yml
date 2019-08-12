@@ -43,3 +43,9 @@
   command: gnome-shell-extension-tool -e Move_Clock@jonathan.bluemosh.com
   ignore_errors: yes
   become: no
+
+- name: Disable snap version of Gnome Calculator, in favor of apt package
+  command: snap remove gnome-calculator
+
+- name: Install apt version of Gnome Calculator, for integration with Ubuntu global search
+  apt: name=gnome-calculator
