@@ -31,6 +31,21 @@
 - name: Install Powerline fonts, for fancier tmux feedback
   apt: name=fonts-powerline
 
+- name: Install psutil, for Powerline extra functions
+  pip:
+    name: psutil
+    extra_args: --user
+    executable: pip3
+
+- name: Install memory usage monitor for Powerline
+  pip:
+    name: powerline-mem-segment
+    extra_args: --user
+    executable: pip3
+
+- name: Install Git status for Powerline
+  apt: name=powerline-gitstatus
+
 - name: Install Midnight Commander
   apt: name=mc
 

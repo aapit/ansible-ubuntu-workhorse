@@ -23,10 +23,3 @@
 
 - name: Install Travis CI client
   apt: name=travis
-
-- name: Install Python Pip
-  apt: name=python-pip
-
-- name: Install psutil, for Powerline extra functions
-  pip:
-    name: psutil
