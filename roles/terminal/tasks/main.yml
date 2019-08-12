@@ -36,12 +36,14 @@
     name: psutil
     extra_args: --user
     executable: pip3
+  become: no
 
 - name: Install memory usage monitor for Powerline
   pip:
     name: powerline-mem-segment
     extra_args: --user
     executable: pip3
+  become: no
 
 - name: Install Git status for Powerline
   apt: name=powerline-gitstatus
