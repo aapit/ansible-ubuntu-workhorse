@@ -1,3 +1,18 @@
 ---
 - name: Install Yubikey Authenticator
   apt: name=yubioath-desktop
+
+- name: Install Kerberos client 1/2
+  apt: name=krb5-user
+
+- name: Install Kerberos client 2/2
+  apt: name=libpam-krb5
+  # libpam-ccreds auth-client-config
+
+- name: Set Kerberos config
+  copy:
+    src: ../files/krb5.conf
+    dest: /etc/
+    owner: root
+    group: root
+    mode: 0644
