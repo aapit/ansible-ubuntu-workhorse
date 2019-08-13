@@ -1,3 +1,28 @@
 ---
 - name: Install libgconf, dependency of Todoist fork by Kamhix
   apt: name=libgconf-2-4
+
+#________________________________________________________________________________
+- name: Install Pomodoro for Gnome 1/, fetch repo
+  git:
+    repo: 'https://github.com/codito/gnome-pomodoro.git'
+    dest: /tmp/gnome-pomodoro
+
+- name: Install Pomodoro for Gnome 2/, install deps
+  apt:
+    name: [autoconf-archive,gettext,valac,pkg-config,desktop-file-utils,appstream-util,libappstream-glib-dev,libglib2.0-dev,gsettings-desktop-schemas-dev,gobject-introspection,libgirepository1.0-dev,libgom-1.0-dev,libgstreamer1.0-dev,libgtk-3-dev,libcanberra-dev,libpeas-dev,libappindicator3-dev]
+
+- name: Install Pomodoro for Gnome 3/, compile source
+  command: ./autogen.sh --prefix=/usr --datadir=/usr/share
+  args:
+    chdir: /tmp/gnome-pomodoro
+
+- name: Install Pomodoro for Gnome 4/, compile source
+  make:
+    chdir: /tmp/gnome-pomodoro
+
+- name: Install Pomodoro for Gnome 5/, compile source
+  make:
+    chdir: /tmp/gnome-pomodoro
+    target: all
+#________________________________________________________________________________
