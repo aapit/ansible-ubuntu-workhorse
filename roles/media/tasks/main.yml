@@ -10,3 +10,6 @@
 
 - name: Install Gimp
   apt: name=gimp
+
+- name: Install FeedReader, like Feedly
+  apt: name=feedreader
