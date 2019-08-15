@@ -7,3 +7,6 @@
 
 - name: Set Gnome weather for Calendar to Celcius
   command: gsettings set org.gnome.GWeather temperature-unit "'centigrade'"
+
+- name: Install Gnome Contacts
+  apt: name=gnome-contacts
