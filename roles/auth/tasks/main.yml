@@ -16,3 +16,9 @@
     owner: root
     group: root
     mode: 0644
+
+- name: Enable Kerberos auth for NFS mounts
+  lineinfile:
+    path: /etc/default/nfs-common
+    regexp: '^NEED_GSSD='
+    line: NEED_GSSD=yes
