@@ -78,3 +78,6 @@
 
 - name: Install neofetch for easy OS and system info
   apt: name=neofetch
+
+- name: Install jq for JSON processing
+  apt: name=jq
