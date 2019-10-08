@@ -15,6 +15,9 @@
   command: vim -c ':PlugInstall | quit | quit'
   become: no
 
+- name: Install CMake, for Vim plugin compilation
+  apt: name=cmake
+
 - name: Install YouCompleteMe (Vim plugin) deps
   become: no
   command: python3 install.py
@@ -23,3 +26,12 @@
 
 - name: Install Travis CI client
   apt: name=travis
+
+- name: Install Python3 apt support
+  apt: name=python3-apt
+
+- name: Install Todoist API
+  pip:
+    name: todoist-python
+    extra_args: --user
+  become: no
