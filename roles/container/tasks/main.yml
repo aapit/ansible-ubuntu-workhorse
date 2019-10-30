@@ -19,6 +19,9 @@
 - debug:
     msg: Don't forget to relog to let the new user group take effect.
 
+- name: Install Docker-Compose
+  apt: name=docker-compose
+
 - name: Install https transport package for apt, recommended for kubectl
   apt: name=apt-transport-https
 
