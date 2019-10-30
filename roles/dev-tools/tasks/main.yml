@@ -24,6 +24,9 @@
   args:
     chdir: ~/.vim/plugged/YouCompleteMe
 
+- name: Install PHP Composer
+  apt: name=composer
+
 - name: Install Travis CI client
   apt: name=travis
 
