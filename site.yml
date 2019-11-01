@@ -8,6 +8,7 @@
     - { role: package-managers, tags: package }
     - { role: os-gui, tags: os-gui }
     - { role: keyboard-basics, tags: keyboard }
+    - { role: copypaste, tags: copypaste }
     - { role: terminal, tags: terminal }
     - { role: power-saving, tags: power }
     - { role: dev-tools, tags: dev }
@@ -21,3 +22,7 @@
     - { role: virtualbox }
     - { role: container, tags: container }
     - { role: hosting, tags: hosting }
+
+  module_defaults:
+    apt:
+      force_apt_get: yes
