@@ -1,2 +1,2 @@
-- name: Install Parcellite for clipboard management
-  apt: name=parcellite update_cache=yes
+- name: Install CopyQ for clipboard management
+  apt: name=copyq update_cache=yes
