@@ -38,3 +38,14 @@
     name: todoist-python
     extra_args: --user
   become: no
+
+- name: Install nodejs version switcher
+  npm:
+    name: n
+    global: yes
+
+- name: Install latest npm, for compatibility with nodejs v10
+  npm:
+    name: npm
+    global: yes
+    state: latest

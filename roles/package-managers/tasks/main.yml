@@ -4,3 +4,6 @@
 
 - name: Install Python2 Pip
   apt: name=python-pip
+
+- name: Install npm
+  apt: name=npm

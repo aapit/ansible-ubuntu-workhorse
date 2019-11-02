@@ -22,6 +22,7 @@
     - { role: virtualbox }
     - { role: container, tags: container }
     - { role: hosting, tags: hosting }
+    - { role: notes, tags: notes }
 
   module_defaults:
     apt:

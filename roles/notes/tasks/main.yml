@@ -1,0 +1,17 @@
+---
+# https://github.com/GoogleChrome/puppeteer/issues/2173#issuecomment-399745457
+- name: Install Puppeteer to resolve Ansible Chromium issue installing Mermaid.cli
+  npm:
+    name: puppeteer
+    global: yes
+    unsafe_perm: yes
+  become: yes
+  become_user: root
+
+- name: Install "Mermaid cli" node.js package, for Markdown diagrams
+  npm:
+    name: mermaid.cli
+    global: yes
+    unsafe_perm: yes
+  become: yes
+  become_user: root
