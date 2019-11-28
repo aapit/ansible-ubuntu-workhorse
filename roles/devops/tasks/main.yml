@@ -1,0 +1,53 @@
+---
+- name: List latest Terraform releases
+  uri:
+    url: https://releases.hashicorp.com/terraform/
+    return_content: yes
+  register: releases_page
+
+- name: read the html file
+  set_fact:
+    file_lines: "{{ releases_page.content.split('\n') }}"
+
+- debug:
+    var: file_lines
+    verbosity: 1
+
+- name: Fetch relative release paths
+  set_fact:
+    release_paths: "{{ file_lines|select('search', '<a')|map('regex_replace', '<a href=\"(.*)\">(.*)</a>', '\\1')|map('trim')|list }}"
+
+- name: Fetch relative release names
+  set_fact:
+    release_names: "{{ file_lines|select('search', '<a')|map('regex_replace', '<a href=\"(.*)\">(.*)</a>', '\\2')|map('trim')|list }}"
+
+- debug:
+    var: release_paths
+    verbosity: 1
+
+- debug:
+    var: release_names
+    verbosity: 1
+
+- name: Fetch latest Terraform release path
+  set_fact:
+    latest_release_path: "{{ release_paths[1] }}"
+
+- name: Fetch latest Terraform release name
+  set_fact:
+    latest_release_name: "{{ release_names[1] }}"
+
+- debug:
+    var: latest_release_path
+    verbosity: 1
+
+- debug:
+    var: latest_release_name
+    verbosity: 1
+
+- name: Install Terraform by .zip
+  unarchive:
+    src: https://releases.hashicorp.com{{ latest_release_path }}{{ latest_release_name }}_linux_amd64.zip
+    dest: ~/.local/bin/
+    remote_src: yes
+  become: no

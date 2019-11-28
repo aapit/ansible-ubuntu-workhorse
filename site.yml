@@ -12,6 +12,7 @@
     - { role: terminal, tags: terminal }
     - { role: power-saving, tags: power }
     - { role: dev-tools, tags: dev }
+    - { role: devops, tags: devops }
     - { role: auth, tags: auth }
     - { role: media, tags: media }
     - { role: net, tags: net }
