@@ -7,3 +7,6 @@
 
 - name: Install npm
   apt: name=npm
+
+- name: Install Flatpack
+  apt: name=flatpak
