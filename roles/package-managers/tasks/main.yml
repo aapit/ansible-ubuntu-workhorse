@@ -10,3 +10,6 @@
 
 - name: Install Flatpack
   apt: name=flatpak
+
+- name: Install Flatpack Gnome extension
+  apt: name=gnome-software-plugin-flatpak
