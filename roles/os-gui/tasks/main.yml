@@ -49,3 +49,7 @@
 
 - name: Install apt version of Gnome Calculator, for integration with Ubuntu global search
   apt: name=gnome-calculator
+
+- name: Enable fractional scaling, especially for HiDPI monitors
+  command: gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+  become: no
