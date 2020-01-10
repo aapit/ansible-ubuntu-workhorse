@@ -42,3 +42,6 @@
 
 - name: Install net-tools for netstat and such
   apt: name=net-tools
+
+- name: Install cifs-tools for Samba shares on commandline
+  apt: name=cifs-tools
