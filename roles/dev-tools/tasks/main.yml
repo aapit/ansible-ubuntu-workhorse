@@ -50,5 +50,11 @@
     global: yes
     state: latest
 
+- name: Install Yarn
+  npm:
+    name: yarn
+    global: yes
+    state: latest
+
 - name: Install Java runtime (Katalon Studio needs OpenJDK 8)
   apt: name=openjdk-8-jre
