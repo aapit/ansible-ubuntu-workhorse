@@ -1,15 +1,3 @@
 ---
-- name: Install Spotify
-  command: snap install spotify
-
-- name: Install VLC player
-  command: snap install vlc
-
-- name: Install VLC codecs
-  command: snap install --beta dav1d
-
-- name: Install Gimp
-  apt: name=gimp
-
-- name: Install FeedReader, like Feedly
-  apt: name=feedreader
+#- name: Install FeedReader, like Feedly
+#  apt: name=feedreader
