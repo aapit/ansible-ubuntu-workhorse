@@ -31,20 +31,20 @@
 - name: Install Powerline fonts, for fancier tmux feedback
   apt: name=fonts-powerline
 
-- name: Install psutil, for Powerline extra functions
-  pip:
-    name: psutil
-    extra_args: --user
-  become: no
+  #- name: Install psutil, for Powerline extra functions
+  # pip:
+    # name: psutil
+    # extra_args: --user
+    # become: no
 
-- name: Install memory usage monitor for Powerline
-  pip:
-    name: powerline-mem-segment
-    extra_args: --user
-  become: no
+    #- name: Install memory usage monitor for Powerline
+    #  pip:
+      #   name: powerline-mem-segment
+      #    extra_args: --user
+      #  become: no
 
-- name: Install Git status for Powerline
-  apt: name=powerline-gitstatus
+      #- name: Install Git status for Powerline
+      #  apt: name=powerline-gitstatus
 
 - name: Install Midnight Commander
   apt: name=mc
@@ -57,7 +57,7 @@
 
 - name: Install bat, a cat alternative
   apt:
-    deb: https://github.com/sharkdp/bat/releases/download/v0.11.0/bat-musl_0.11.0_amd64.deb
+    deb: https://github.com/sharkdp/bat/releases/download/v0.12.1/bat-musl_0.12.1_amd64.deb
 
 - name: Install Exa, an ls alternative
   unarchive:
@@ -85,3 +85,6 @@
 
 - name: Install jq for JSON processing
   apt: name=jq
+
+- name: Install Konsole terminal, for better TERM and transparency support
+  apt: name=konsole
