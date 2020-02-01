@@ -10,5 +10,6 @@
 - name: Install Signal Desktop client
   apt: name=signal-desktop update_cache=yes
 
-- name: Install emoji support, for browsers and such
-  apt: name=fonts-noto-color-emoji
+# Todo: More emoji support in Linuxmint
+#- name: Install emoji support, for browsers and such
+# apt: name=fonts-noto-color-emoji
