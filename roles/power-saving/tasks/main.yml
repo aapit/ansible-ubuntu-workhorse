@@ -1,35 +1,35 @@
 ---
-- name: Install Caffeine
-  apt: name=caffeine
+# - name: Install Caffeine
+#   apt: name=caffeine
 
-- name: Install Caffeine Gnome extension, 1 of 5
-  file:
-    path: /tmp/caffeine-gnome-extension
-    state: directory
+  #- name: Install Caffeine Gnome extension, 1 of 5
+# file:
+  #     path: /tmp/caffeine-gnome-extension
+  #     state: directory
 
-- name: Install Caffeine Gnome extension, 2 of 5
-  git:
-    repo: 'https://github.com/eonpatapon/gnome-shell-extension-caffeine.git'
-    dest: /tmp/caffeine-gnome-extension
-    force: yes
+  # - name: Install Caffeine Gnome extension, 2 of 5
+  #   git:
+    #     repo: 'https://github.com/eonpatapon/gnome-shell-extension-caffeine.git'
+    #     dest: /tmp/caffeine-gnome-extension
+    #     force: yes
 
-- name: Install Caffeine Gnome extension, 3 of 5
-  command: ./update-locale.sh
-  args:
-    chdir: /tmp/caffeine-gnome-extension
+    # - name: Install Caffeine Gnome extension, 3 of 5
+    #   command: ./update-locale.sh
+    #   args:
+      #     chdir: /tmp/caffeine-gnome-extension
 
-- name: Install Caffeine Gnome extension, 4 of 5
-  command: glib-compile-schemas --strict --targetdir=caffeine@patapon.info/schemas/ caffeine@patapon.info/schemas
-  args:
-    chdir: /tmp/caffeine-gnome-extension
+      # - name: Install Caffeine Gnome extension, 4 of 5
+      #   command: glib-compile-schemas --strict --targetdir=caffeine@patapon.info/schemas/ caffeine@patapon.info/schemas
+      #   args:
+        #     chdir: /tmp/caffeine-gnome-extension
 
-- name: Install Caffeine Gnome extension, 5 of 5
-  copy:
-    src: /tmp/caffeine-gnome-extension/caffeine@patapon.info
-    dest: ~/.local/share/gnome-shell/extensions/
-  become: no
+        # - name: Install Caffeine Gnome extension, 5 of 5
+        #   copy:
+          #     src: /tmp/caffeine-gnome-extension/caffeine@patapon.info
+          #     dest: ~/.local/share/gnome-shell/extensions/
+          #   become: no
 
-- name: Enable Caffeine Gnome extension
-  command: gnome-shell-extension-tool -e caffeine@patapon.info
-  ignore_errors: yes
-  become: no
+          # - name: Enable Caffeine Gnome extension
+          #   command: gnome-shell-extension-tool -e caffeine@patapon.info
+          #   ignore_errors: yes
+          #   become: no
