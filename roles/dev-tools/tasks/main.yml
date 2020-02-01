@@ -5,11 +5,8 @@
 - name: Install NeoVim
   apt: name=neovim
 
-- name: Install ripgrep, for Notational Velocity's fast regex dir searching
-  apt: name=ripgrep
-
-- name: Install fzf, fuzzy file finder, needed by Notational Velocity
-  apt: name=fzf
+- name: Install PHP 7 CLI
+  apt: name=php7.2-cli
 
 - name: Install Vim plugins
   command: vim -c ':PlugInstall | quit | quit'
@@ -18,17 +15,20 @@
 - name: Install CMake, for Vim plugin compilation
   apt: name=cmake
 
-- name: Install YouCompleteMe (Vim plugin) deps
+- name: Install Python dev, for YouCompleteMe deps and others
+  apt: name=python-dev
+
+- name: Install setuptools, for YouCompleteMe deps and others
+  apt: name=python3-setuptools
+
+- name: Install Python Vim bindings, for YouCompleteMe deps and others
+  pip:
+    name: pynvim
+    extra_args: --user
   become: no
-  command: python3 install.py
-  args:
-    chdir: ~/.vim/plugged/YouCompleteMe
 
 - name: Install PHP Composer
   apt: name=composer
-
-- name: Install Travis CI client
-  apt: name=travis
 
 - name: Install Python3 apt support
   apt: name=python3-apt
@@ -38,11 +38,6 @@
     name: todoist-python
     extra_args: --user
   become: no
-
-- name: Install nodejs version switcher
-  npm:
-    name: n
-    global: yes
 
 - name: Install latest npm, for compatibility with nodejs v10
   npm:
@@ -55,6 +50,3 @@
     name: yarn
     global: yes
     state: latest
-
-- name: Install Java runtime (Katalon Studio needs OpenJDK 8)
-  apt: name=openjdk-8-jre
