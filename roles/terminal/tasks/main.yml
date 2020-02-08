@@ -88,3 +88,6 @@
 
 - name: Install Konsole terminal, for better TERM and transparency support
   apt: name=konsole
+
+- name: Install xclip for copy-pasting
+  apt: name=xclip
