@@ -91,3 +91,6 @@
 
 - name: Install xclip for copy-pasting
   apt: name=xclip
+
+- name: Install httpie
+  apt: name=httpie
