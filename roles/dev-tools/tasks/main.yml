@@ -15,6 +15,9 @@
 - name: Install CMake, for Vim plugin compilation
   apt: name=cmake
 
+- name: Install build-essential, for YouCompleteMe deps and others
+  apt: name=build-essential
+
 - name: Install Python dev, for YouCompleteMe deps and others
   apt: name=python-dev
 
@@ -50,3 +53,6 @@
     name: yarn
     global: yes
     state: latest
+
+- name: Install Gulp
+  apt: name=gulp
