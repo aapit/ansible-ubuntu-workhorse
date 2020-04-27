@@ -1,4 +1,4 @@
 ---
 - name: Install VirtualBox
   apt:
-    name: virtualbox
+    name: virtualbox-qt

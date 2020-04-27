@@ -56,3 +56,6 @@
 
 - name: Install Gulp
   apt: name=gulp
+
+- name: Install fswatch to monitor dirs
+  apt: name=fswatch
