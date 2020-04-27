@@ -57,5 +57,5 @@
 - name: Install Gulp
   apt: name=gulp
 
-- name: Install fswatch to monitor dirs
-  apt: name=fswatch
+- name: Install homebrew wrapper, to watch monitors and execute sync / build scripts
+  apt: name=linuxbrew-wrapper
