@@ -6,22 +6,16 @@
 
   roles:
     - { role: package-managers, tags: package }
-    - { role: os-gui, tags: os-gui }
     - { role: keyboard-basics, tags: keyboard }
     - { role: copypaste, tags: copypaste }
     - { role: terminal, tags: terminal }
-    - { role: power-saving, tags: power }
     - { role: dev-tools, tags: dev }
     - { role: devops, tags: devops }
     - { role: auth, tags: auth }
-    - { role: media, tags: media }
     - { role: net, tags: net }
     - { role: browser, tags: browse }
     - { role: messaging, tags: msg }
-    - { role: file-sync, tags: [sync, files] }
-    - { role: productivity, tags: productivity }
     - { role: container, tags: container }
     - { role: hosting, tags: hosting }
-    - { role: notes, tags: notes }
     - { role: virtualbox, tags: virtualbox }
     - { role: iot, tags: iot }

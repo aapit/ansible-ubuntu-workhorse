@@ -1,7 +1,4 @@
 ---
-- name: Install xterm
-  apt: name=xterm
-
 - name: Install tmux
   apt: name=tmux
 
@@ -24,30 +21,6 @@
 
 - name: Install xclip, for copy-pasting
   apt: name=xclip
-
-- name: Install Powerline, for fancier tmux feedback
-  apt: name=powerline
-
-- name: Install Powerline fonts, for fancier tmux feedback
-  apt: name=fonts-powerline
-
-  #- name: Install psutil, for Powerline extra functions
-  # pip:
-    # name: psutil
-    # extra_args: --user
-    # become: no
-
-    #- name: Install memory usage monitor for Powerline
-    #  pip:
-      #   name: powerline-mem-segment
-      #    extra_args: --user
-      #  become: no
-
-      #- name: Install Git status for Powerline
-      #  apt: name=powerline-gitstatus
-
-- name: Install Midnight Commander
-  apt: name=mc
 
 - name: Install AutoJump, for easy dir access
   apt: name=autojump
@@ -85,12 +58,6 @@
 
 - name: Install jq for JSON processing
   apt: name=jq
-
-- name: Install Konsole terminal, for better TERM and transparency support
-  apt: name=konsole
-
-- name: Install xclip for copy-pasting
-  apt: name=xclip
 
 - name: Install httpie
   apt: name=httpie

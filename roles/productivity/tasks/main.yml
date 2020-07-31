@@ -1,3 +1,0 @@
----
-#- name: Install libgconf, dependency of Todoist fork by Kamhix
-# apt: name=libgconf-2-4

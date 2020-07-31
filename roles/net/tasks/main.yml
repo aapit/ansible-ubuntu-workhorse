@@ -8,26 +8,6 @@
 - name: Install WhoIs
   apt: name=whois
 
-- name: Install minicom, for initialization of Cisco devices
-  apt: name=minicom
-
-  #- name: Install WireShark
-  #  apt: name=wireshark-qt
-
-  #- name: Enable non-root wireshark 1/2 (Set debconf)
-  #  become: yes
-  #  debconf: name='wireshark-common' question='wireshark-common/install-setuid' value='true' vtype='boolean'
-
-  #- name: Enable non-root wireshark 2/2 (reconfiguring wireshark-common package)
-  #  become: yes
-  #  command: dpkg-reconfigure -f noninteractive wireshark-common
-
-  #- name: Add current user to WireShark group (user needs to relog to enable this)
-  #  user:
-    #    name: "{{ lookup('env','USER') }}"
-    #    append: yes
-    #    groups: wireshark
-
 - name: Add NordVPN client repository and key
   apt:
     deb: https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
@@ -36,12 +16,3 @@
   apt: 
     name: nordvpn
     update_cache: yes
-
-#- name: Install nfs-common to mount nfs disks
-# apt: name=nfs-common
-
-#- name: Install net-tools for netstat and such
-# apt: name=net-tools
-
-#- name: Install cifs-tools for Samba shares on commandline
-#  apt: name=cifs-tools

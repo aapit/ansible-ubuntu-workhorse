@@ -1,3 +1,0 @@
----
-#- name: Install FeedReader, like Feedly
-#  apt: name=feedreader
