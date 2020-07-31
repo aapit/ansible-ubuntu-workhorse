@@ -1,6 +1,5 @@
 # About
-This is my Ansible setup to provision a 'workhorse' Ubuntu (latest version, non-LTS) machine.
-Note: Might be perceived as highly opinionated / biased / personal. But then again, I get that a lot about myself, too ;)
+This is my Ansible setup to provision a 'workhorse' Ubuntu (latest version LTS) machine.
 
 # Installation
 ## 1. Ubuntu
@@ -25,11 +24,11 @@ MyUserName ALL=NOPASSWD: ALL
 ## 4. Ansible Repository
 Download this repository to the machine:
 ```bash
-$ git clone git@github.com:aapit/ansible-ubuntu-workhorse
+$ git clone git@github.com:aapit/ansible-workhorse
 ```
 Run the installer in the repository directory:
 ```bash
-$ cd ansible-ubuntu-workhorse
+$ cd ansible-workhorse
 $ make install
 ```
 
