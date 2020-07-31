@@ -2,6 +2,13 @@
 - name: Install zsh
   apt: name=zsh
 
+- name: Create symlink for XDG oh-my-zsh dir to non-XDG
+  become: no
+  file:
+   src: "~/.oh-my-zsh"
+   dest: "~/.config/oh-my-zsh"
+   state: link
+
 - name: Install tmux
   apt: name=tmux
 
