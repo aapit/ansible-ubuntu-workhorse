@@ -10,7 +10,9 @@
 
 - name: Add NordVPN client repository and key
   apt:
-    deb: https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
+    deb: https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn_3.7.4_amd64.deb
+  # Find releases:
+  # https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/
 
 - name: Install NordVPN client
   apt: 

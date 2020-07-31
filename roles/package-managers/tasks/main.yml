@@ -4,3 +4,6 @@
 
 - name: Install npm
   apt: name=npm
+
+- name: Install git for custom installs further down the line
+  apt: name=git
