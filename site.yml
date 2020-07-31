@@ -4,6 +4,11 @@
   remote_user: "{{ lookup('env','USER') }}"
   become: yes
 
+  vars_prompt:
+    - name: "my_password"
+      prompt: "Enter password to change default shell"
+      private: yes
+
   roles:
     - { role: package-managers, tags: package }
     - { role: keyboard-basics, tags: keyboard }

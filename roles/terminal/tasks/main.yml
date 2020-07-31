@@ -1,4 +1,15 @@
 ---
+- name: Install zsh
+  apt: name=zsh
+
+- name: Set zsh as default shell
+  become: no
+  expect:
+    command: "chsh -s /usr/bin/zsh"
+    responses:
+      (?i)password: "{{ my_password }}"
+    creates: ".shell_is_zsh"
+
 - name: Install tmux
   apt: name=tmux
 
