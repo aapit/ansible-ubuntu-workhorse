@@ -1,6 +1,23 @@
 # About
 This is my Ansible setup to provision a 'workhorse' Ubuntu (latest version LTS) machine.
 
+# Running
+## Run the installer in the repository directory
+```bash
+cd ansible-workhorse
+make install
+```
+Note: This will install all included tools on `localhost`.
+
+## Run it on a host other than `localhost`
+```bash
+make install host=oldskool.mainframe.cjb.net
+```
+## Run a select module ('role') by tag:
+```bash
+make install tag=keyboard
+```
+
 # Installation
 ## 1. Ubuntu
 Install the minimal version of Ubuntu, without extra software / bloatware.
@@ -25,11 +42,6 @@ MyUserName ALL=NOPASSWD: ALL
 Download this repository to the machine:
 ```bash
 $ git clone git@github.com:aapit/ansible-workhorse
-```
-Run the installer in the repository directory:
-```bash
-$ cd ansible-workhorse
-$ make install
 ```
 
 ## 5. SSH keys

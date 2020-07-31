@@ -1,6 +1,6 @@
 ---
 - name: Provision main machine
-  hosts: localhost
+  hosts: "{{ variable_host | default('localhost') }}"
   remote_user: "{{ lookup('env','USER') }}"
   become: yes
 
