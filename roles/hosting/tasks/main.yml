@@ -1,9 +1,0 @@
----
-- name: Install Digital Ocean CLI client
-  unarchive:
-    src: https://github.com/digitalocean/doctl/releases/download/v1.37.0/doctl-1.37.0-linux-amd64.tar.gz
-    dest: /tmp/
-    remote_src: yes
-
-- name: Move Digital Ocean CLI binary to bin folder
-  command: mv /tmp/doctl /usr/local/bin

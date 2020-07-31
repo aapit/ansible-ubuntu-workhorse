@@ -16,3 +16,6 @@
   apt: 
     name: nordvpn
     update_cache: yes
+
+- name: Install httpie
+  apt: name=httpie

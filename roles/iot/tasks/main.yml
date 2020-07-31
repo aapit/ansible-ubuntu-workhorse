@@ -1,6 +1,0 @@
----
-- name: Install Tasmotizer, to flash Tasmota alternative firmware for ESP2866
-  pip:
-    name: tasmotizer
-    #    extra_args: --user
-  become: no
