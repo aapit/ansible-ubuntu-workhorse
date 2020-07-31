@@ -18,7 +18,7 @@
     - { role: net, tags: net }
     - { role: browser, tags: browse }
     - { role: messaging, tags: msg }
-    - { role: file-sync, tags: sync }
+    - { role: file-sync, tags: [sync, files] }
     - { role: productivity, tags: productivity }
     - { role: container, tags: container }
     - { role: hosting, tags: hosting }
