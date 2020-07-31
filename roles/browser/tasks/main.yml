@@ -1,11 +1,18 @@
 ---
+
+- name: Install apt-transport-https, to install Brave
+  apt: name=apt-transport-https
+
+- name: Install curl, to install Brave
+  apt: name=curl
+
 - name: Approve Brave repository by key
   apt_key:
     url: https://brave-browser-apt-release.s3.brave.com/brave-core.asc
 
 - name: Register Brave package repo for the current distro release
   apt_repository:
-    repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ {{ ansible_distribution_release }} main
+    repo: deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main
 
 - name: Install Brave browser
   apt: name=brave-browser update_cache=yes

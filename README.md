@@ -19,16 +19,16 @@ make install tag=keyboard
 ```
 
 # Installation
-## 1. Ubuntu
+## Ubuntu
 Install the minimal version of Ubuntu, without extra software / bloatware.
 
-## 2. Ansible
+## Ansible
 Install Ansible:
 ```bash
 $ sudo apt install ansible
 ```
 
-## 3. Passwordless `sudo`
+## Passwordless `sudo`
 Add passwordless sudo rights:
 ```bash
 $ sudo visudo -f /etc/sudoers.d/overrides
@@ -38,11 +38,19 @@ In this file, add the line:
 MyUserName ALL=NOPASSWD: ALL
 ```
 
-## 4. Ansible Repository
+## Ansible Repository
 Download this repository to the machine:
 ```bash
 $ git clone git@github.com:aapit/ansible-workhorse
 ```
 
-## 5. SSH keys
+## SSH keys
 Set up your private and public ssh key(s) in `~/.ssh`
+Create a new key if needed, with `ssh-keygen`
+
+## GitHub auth
+Insert the contents of `~/.ssh/id_rsa.pub` into the [keys section of GitHub's settings page](https://github.com/settings/keys)
+
+## Dotfiles
+If dotfiles aren't present on the system yet,
+run the [restore script](https://raw.githubusercontent.com/aapit/dotfiles/master/Scripts/dotfiles/restore.sh) first.

@@ -13,3 +13,7 @@ endif
 
 install:
 	${CMD} ${TAG_ARGS} ${HOST_ARGS}
+
+
+install-galaxy-deps:
+	ansible-galaxy install gantsign.oh-my-zsh

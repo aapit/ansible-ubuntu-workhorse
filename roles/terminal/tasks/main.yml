@@ -2,14 +2,6 @@
 - name: Install zsh
   apt: name=zsh
 
-- name: Set zsh as default shell
-  become: no
-  expect:
-    command: "chsh -s /usr/bin/zsh"
-    responses:
-      (?i)password: "{{ my_password }}"
-    creates: ".shell_is_zsh"
-
 - name: Install tmux
   apt: name=tmux
 
@@ -29,6 +21,8 @@
 - name: Run tmux plugin manager install script
   become: no
   command: ~/.config/tmux/plugins/tpm/bin/install_plugins
+  environment:
+    TMUX_PLUGIN_MANAGER_PATH: "$HOME/.config/tmux/plugins"
 
 - name: Install xclip, for copy-pasting
   apt: name=xclip
