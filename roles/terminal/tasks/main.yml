@@ -12,9 +12,11 @@
 - name: Install zsh plugin autosuggestions
   apt: name=zsh-autosuggestions
 
-- git:
-    repo: git@github.com:zsh-users/zsh-autosuggestions.git
-    dest: ~/.config/zsh/zsh-autosuggestions
+- name: Install zsh-autosuggestions oh-my-zsh binding
+  become: no
+  git:
+    repo: git@github.com:zsh-users/zsh-autosuggestions
+    dest: ~/.config/oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 - name: Install tmux
   apt: name=tmux
