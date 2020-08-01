@@ -84,4 +84,9 @@
   apt: name=httpie
 
 - name: Install broot
+  become: no
   command: cargo install broot
+
+- name: Install broot deps
+  become: no
+  command: broot --install
