@@ -9,6 +9,13 @@
    dest: "~/.config/oh-my-zsh"
    state: link
 
+- name: Install zsh plugin autosuggestions
+  apt: name=zsh-autosuggestions
+
+- git:
+    repo: git@github.com:zsh-users/zsh-autosuggestions.git
+    dest: ~/.config/zsh/zsh-autosuggestions
+
 - name: Install tmux
   apt: name=tmux
 

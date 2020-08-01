@@ -7,3 +7,6 @@
 
 - name: Install git for custom installs further down the line
   apt: name=git
+
+- name: Install Cargo for Rust packages
+  apt: name=cargo
