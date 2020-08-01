@@ -62,8 +62,10 @@
 - name: Move Exa binary to bin folder
   command: mv /tmp/exa-linux-x86_64 /usr/local/bin/exa
 
-- name: Install htop, an alternative to top
-  apt: name=htop
+- name: Install gtop, an alternative to top
+  npm:
+    name: gtop
+    global: yes
 
 - name: Enable cursor blinking
   command: gsettings set org.gnome.desktop.interface cursor-blink true
@@ -90,3 +92,4 @@
 - name: Install broot deps
   become: no
   command: broot --install
+  async: 5
