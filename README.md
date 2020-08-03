@@ -1,6 +1,9 @@
 # About
 This is my Ansible setup to provision a 'workhorse' Ubuntu (latest version LTS) machine.
 
+On top of that, I use playbooks with a specific focus, depending on the role of the machine I'm provisioning.
+Such as my [devtools playbook](https://github.com/aapit/ansible-devtools) and [one for tinkering](https://github.com/aapit/ansible-tinkertools).
+
 # Running
 ## Run the installer in the repository directory
 ```bash
