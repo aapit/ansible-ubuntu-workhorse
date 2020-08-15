@@ -93,3 +93,6 @@
   become: no
   command: broot --install
   async: 5
+
+- name: Install vifm file explorer
+  apt: name=vifm
