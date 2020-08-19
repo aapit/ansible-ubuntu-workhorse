@@ -24,3 +24,17 @@
     line: keysym Alt_R = Multi_key
     create: yes
   become: no
+
+- name: Set up policy kit permissions for UHK [1/3]
+  copy:
+    src: ../files/50-uhk60.rules
+    dest: /etc/udev/rules.d/50-uhk60.rules
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Set up policy kit permissions for UHK [2/3]
+  command: udevadm trigger
+
+- name: Set up policy kit permissions for UHK [3/3]
+  command: udevadm settle
