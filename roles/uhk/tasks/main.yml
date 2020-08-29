@@ -1,0 +1,41 @@
+---
+- name: Find latest UHK Agent release
+  uri:
+    url: https://github.com/UltimateHackingKeyboard/agent/releases/latest
+    return_content: yes
+  register: uhk_release_redirect
+
+- name: Store latest UHK Agent version number
+  set_fact:
+    uhk_latest_version: "{{ uhk_release_redirect.url | replace('https://github.com/UltimateHackingKeyboard/agent/releases/tag/v','')}}"
+
+- name: Store latest UHK Agent AppImage filename
+  set_fact:
+    uhk_latest_filename: "UHK.Agent-{{ uhk_latest_version }}-linux-x86_64.AppImage"
+
+- name: Download latest UHK Agent release
+  get_url:
+    url: "https://github.com/UltimateHackingKeyboard/agent/releases/download/v{{ uhk_latest_version }}/{{ uhk_latest_filename }}"
+    dest: "~/Apps/{{ uhk_latest_filename }}"
+    mode: '0775'
+  become: no
+
+- name: Symlink latest release from /usr/bin for easy access through launchers
+  file:
+    src: "/home/{{ lookup('env', 'USER') }}/Apps/{{ uhk_latest_filename }}"
+    dest: /usr/bin/uhk-agent
+    state: link
+
+- name: Set up policy kit permissions for UHK [1/3]
+  copy:
+    src: ../files/50-uhk60.rules
+    dest: /etc/udev/rules.d/50-uhk60.rules
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Set up policy kit permissions for UHK [2/3]
+  command: udevadm trigger
+
+- name: Set up policy kit permissions for UHK [3/3]
+  command: udevadm settle

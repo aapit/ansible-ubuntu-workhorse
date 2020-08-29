@@ -8,6 +8,7 @@
   roles:
     - { role: package-managers, tags: package }
     - { role: keyboard-basics, tags: keyboard }
+    - { role: uhk, tags: [keyboard, uhk] }
     - { role: copypaste, tags: copypaste }
     - { role: terminal, tags: terminal }
     - { role: gantsign.oh-my-zsh, tags: terminal, users: [{ username: david }]}
