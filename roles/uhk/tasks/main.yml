@@ -26,6 +26,19 @@
     dest: /usr/bin/uhk-agent
     state: link
 
+- name: Create .desktop file for easy access through launchers
+  copy:
+    content: |
+      [Desktop Entry]
+      Name=UHK Agent
+      Comment=Ultimate Hacking Keyboard configuration app
+      Exec=/usr/bin/uhk-agent %U
+      Icon=/usr/share/icons/candy-icons/apps/scalable/system-config-keyboard.svg
+      Terminal=false
+      Type=Application
+    dest: ~/.local/share/applications/uhk-agent.desktop
+  become: no
+
 - name: Set up policy kit permissions for UHK [1/3]
   copy:
     src: ../files/50-uhk60.rules

@@ -30,11 +30,11 @@
   copy:
     content: |
       [Desktop Entry]
-      Name=Minetime
+      Name=MineTime
       Comment=Calendar
       Exec=/usr/bin/minetime %U
-      Icon=
+      Icon=/usr/share/icons/candy-icons/apps/scalable/calendar.svg
       Terminal=false
       Type=Application
-    dest: /usr/share/applications/minetime.desktop
-    become: no
+    dest: ~/.local/share/applications/minetime.desktop
+  become: no
