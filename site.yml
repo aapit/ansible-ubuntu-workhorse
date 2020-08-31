@@ -14,5 +14,6 @@
     - { role: gantsign.oh-my-zsh, tags: terminal, users: [{ username: david }]}
     - { role: auth, tags: auth }
     - { role: net, tags: net }
-    - { role: browser, tags: browse }
-    - { role: messaging, tags: msg }
+    - { role: browser, tags: [browse, gui] }
+    - { role: messaging, tags: [msg, gui] }
+    - { role: calendar, tags: [calendar, gui]}

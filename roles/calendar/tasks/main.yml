@@ -1,0 +1,40 @@
+---
+- name: Find latest Minetime release
+  uri:
+    url: https://github.com/marcoancona/MineTime/releases/latest
+    return_content: yes
+  register: release_redirect
+
+- name: Store latest version number
+  set_fact:
+    latest_version: "{{ release_redirect.url | replace('https://github.com/marcoancona/MineTime/releases/tag/v','')}}"
+
+- name: Store latest AppImage filename
+  set_fact:
+    latest_filename: "MineTime-{{ latest_version }}.AppImage"
+
+- name: Download latest release
+  get_url:
+    url: "https://github.com/marcoancona/MineTime/releases/download/v{{ latest_version }}/{{ latest_filename }}"
+    dest: "~/Apps/{{ latest_filename }}"
+    mode: '0775'
+  become: no
+
+- name: Symlink latest release from /usr/bin for easy access through launchers
+  file:
+    src: "/home/{{ lookup('env', 'USER') }}/Apps/{{ latest_filename }}"
+    dest: /usr/bin/minetime
+    state: link
+
+- name: Create .desktop file for easy access through launchers
+  copy:
+    content: |
+      [Desktop Entry]
+      Name=Minetime
+      Comment=Calendar
+      Exec=/usr/bin/minetime %U
+      Icon=
+      Terminal=false
+      Type=Application
+    dest: /usr/share/applications/minetime.desktop
+    become: no
