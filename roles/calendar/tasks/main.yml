@@ -16,13 +16,13 @@
 - name: Download latest release
   get_url:
     url: "https://github.com/marcoancona/MineTime/releases/download/v{{ latest_version }}/{{ latest_filename }}"
-    dest: "~/Apps/{{ latest_filename }}"
+    dest: "~/Apps/AppImages/{{ latest_filename }}"
     mode: '0775'
   become: no
 
 - name: Symlink latest release from /usr/bin for easy access through launchers
   file:
-    src: "/home/{{ lookup('env', 'USER') }}/Apps/{{ latest_filename }}"
+    src: "/home/{{ lookup('env', 'USER') }}/Apps/AppImages/{{ latest_filename }}"
     dest: /usr/bin/minetime
     state: link
 

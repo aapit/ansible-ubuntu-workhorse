@@ -16,13 +16,13 @@
 - name: Download latest UHK Agent release
   get_url:
     url: "https://github.com/UltimateHackingKeyboard/agent/releases/download/v{{ uhk_latest_version }}/{{ uhk_latest_filename }}"
-    dest: "~/Apps/{{ uhk_latest_filename }}"
+    dest: "~/Apps/AppImages/{{ uhk_latest_filename }}"
     mode: '0775'
   become: no
 
 - name: Symlink latest release from /usr/bin for easy access through launchers
   file:
-    src: "/home/{{ lookup('env', 'USER') }}/Apps/{{ uhk_latest_filename }}"
+    src: "/home/{{ lookup('env', 'USER') }}/Apps/AppImages/{{ uhk_latest_filename }}"
     dest: /usr/bin/uhk-agent
     state: link
 
