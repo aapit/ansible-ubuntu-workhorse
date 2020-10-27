@@ -11,7 +11,6 @@
     - { role: uhk, tags: [keyboard, uhk] }
     - { role: copypaste, tags: copypaste }
     - { role: terminal, tags: terminal }
-    - { role: gantsign.oh-my-zsh, tags: terminal, users: [{ username: david }]}
     - { role: auth, tags: auth }
     - { role: net, tags: net }
     - { role: browser, tags: [browse, gui] }
